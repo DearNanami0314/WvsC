@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scenes/UI/pattern_hint_ui.gd" id="1_pattern"]
+
+[node name="PatternHintUI" type="Label"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 13.0
+grow_horizontal = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 8
+text = "当前牌型：无效牌型"
+script = ExtResource("1_pattern")

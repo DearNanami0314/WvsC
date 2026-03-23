@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Battle/enemy.gd" id="1_enemy"]
+[ext_resource type="Script" path="res://Battle/enemy_controller.gd" id="2_controller"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/enemy_ui.tscn" id="3_display"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_enemy")
+
+[node name="EnemyController" type="Node" parent="."]
+script = ExtResource("2_controller")
+
+[node name="EnemyUI" parent="." instance=ExtResource("3_display")]

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://drft5wf3e83ol"]
+
+[ext_resource type="Theme" uid="uid://bhopjx6o3hegh" path="res://Art/main_theme.tres" id="1_6a88y"]
+[ext_resource type="Script" uid="uid://dlmyov03w5wqh" path="res://Scenes/CardUI/card_ui.gd" id="1_card_ui"]
+[ext_resource type="StyleBox" uid="uid://b4b3e0d14kvmi" path="res://Art/Stylebox/card_base_stylebox.tres" id="3_llwqj"]
+
+[sub_resource type="Theme" id="Theme_6a88y"]
+
+[node name="CardUI" type="Control" unique_id=1812826094]
+custom_minimum_size = Vector2(16, 24)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 19.0
+offset_bottom = 28.0
+theme = ExtResource("1_6a88y")
+script = ExtResource("1_card_ui")
+
+[node name="Panel" type="Panel" parent="." unique_id=1423123063]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_llwqj")
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=246783096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Panel/VBox" unique_id=1377193232]
+layout_mode = 2
+theme = SubResource("Theme_6a88y")
+theme_override_font_sizes/font_size = 12
+text = "♠A"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Panel/VBox" unique_id=1610539365]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Hitbox" type="Button" parent="." unique_id=2106618280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6a88y")
+flat = true

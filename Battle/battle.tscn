@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bspvmppeructp"]
+
+[ext_resource type="Script" uid="uid://c5ynksbf3dslv" path="res://Battle/battle_controller.gd" id="1_battle"]
+[ext_resource type="Script" uid="uid://b1ow2teqplvyo" path="res://Core/Turn/turn_manager.gd" id="2_turn"]
+[ext_resource type="Script" uid="uid://thifjymlguaa" path="res://Battle/player_controller.gd" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://bmyn5fmorjhj6" path="res://Scenes/UI/battle_hud.tscn" id="4_battle_hud"]
+[ext_resource type="PackedScene" path="res://Battle/enemy.tscn" id="5_enemy_scene"]
+[ext_resource type="PackedScene" uid="uid://drogstguabolo" path="res://Scenes/UI/log.tscn" id="6_log_ui"]
+[ext_resource type="Texture2D" uid="uid://cjl80taakpftw" path="res://Art/UI/background.png" id="7_0lqow"]
+
+[node name="Battle" type="Node2D" unique_id=2086893875]
+script = ExtResource("1_battle")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="." unique_id=410095882]
+modulate = Color(1, 1, 1, 0.57254905)
+texture = ExtResource("7_0lqow")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TurnManager" type="Node" parent="." unique_id=1311423213]
+script = ExtResource("2_turn")
+
+[node name="PlayerController" type="Node" parent="." unique_id=1689709283]
+script = ExtResource("3_player")
+
+[node name="Enemy" parent="." unique_id=872906649 instance=ExtResource("5_enemy_scene")]
+
+[node name="BattleHUD" parent="." unique_id=209965537 instance=ExtResource("4_battle_hud")]
+
+[node name="Log" parent="." unique_id=247408592 instance=ExtResource("6_log_ui")]
+offset_left = 169.0
+offset_top = 90.0
+offset_right = 256.0
+offset_bottom = 142.0

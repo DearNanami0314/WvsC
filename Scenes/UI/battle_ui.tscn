@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scenes/UI/battle_ui.gd" id="1_battle_ui"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/hand_ui.tscn" id="2_hand_ui"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pattern_hint_ui.tscn" id="3_pattern_ui"]
+
+[node name="BattleUI" type="CanvasLayer"]
+script = ExtResource("1_battle_ui")
+
+[node name="PatternHintUI" parent="." instance=ExtResource("3_pattern_ui")]
+
+[node name="HandUI" parent="." instance=ExtResource("2_hand_ui")]
+
+[node name="Controls" type="HBoxContainer" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 88.0
+offset_right = -24.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="PlayCardsButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "打出选牌"
+
+[node name="EndPlayPhaseButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "结束出牌阶段"
+
+[node name="DiscardSelectedButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "弃置选牌"
+
+[node name="EndEnemyTurnButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "结束敌方回合(测试)"

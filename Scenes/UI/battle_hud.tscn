@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bmyn5fmorjhj6"]
+
+[ext_resource type="Script" uid="uid://cruvh1mog4sql" path="res://Scenes/UI/battle_hud.gd" id="1_hud"]
+[ext_resource type="PackedScene" uid="uid://brfpvct3j285e" path="res://Scenes/UI/hand_ui.tscn" id="2_hand"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pattern_hint_ui.tscn" id="3_pattern"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/intent_ui.tscn" id="4_intent"]
+[ext_resource type="FontFile" uid="uid://1jly0smcxdgu" path="res://Art/pixel_rpg.ttf" id="5_2xnho"]
+[ext_resource type="Theme" uid="uid://bhopjx6o3hegh" path="res://Art/main_theme.tres" id="5_mx1kb"]
+
+[sub_resource type="Theme" id="Theme_4e0sn"]
+default_font = ExtResource("5_2xnho")
+default_font_size = 8
+Panel/styles/panel = null
+
+[node name="BattleHUD" type="CanvasLayer" unique_id=570325503]
+script = ExtResource("1_hud")
+
+[node name="HUDRoot" type="Control" parent="." unique_id=1976737251]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_mx1kb")
+
+[node name="PatternHintUI" parent="HUDRoot" unique_id=791065108 instance=ExtResource("3_pattern")]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 93.0
+offset_right = 2.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 8
+
+[node name="IntentUI" parent="HUDRoot" unique_id=116332774 instance=ExtResource("4_intent")]
+layout_mode = 1
+offset_left = -60.0
+offset_top = 2.0
+offset_right = 0.0
+theme = SubResource("Theme_4e0sn")
+
+[node name="HandUI" parent="HUDRoot" unique_id=1367187827 instance=ExtResource("2_hand")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Controls" type="HBoxContainer" parent="HUDRoot" unique_id=1076859457]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 70.0
+offset_right = 225.0
+offset_bottom = 92.0
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="PlayCardsButton" type="Button" parent="HUDRoot/Controls" unique_id=26437471]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+text = "打出选牌"
+
+[node name="EndPlayPhaseButton" type="Button" parent="HUDRoot/Controls" unique_id=1280583490]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+text = "结束出牌"
+
+[node name="DiscardSelectedButton" type="Button" parent="HUDRoot/Controls" unique_id=222644966]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+text = "弃置选牌"
+
+[node name="EndEnemyTurnButton" type="Button" parent="HUDRoot/Controls" unique_id=1274318786]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+text = "敌方回合"
+
+[node name="SubtitleLabel" type="Label" parent="HUDRoot" unique_id=820036750]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "阶段字幕"
+horizontal_alignment = 1
+vertical_alignment = 1

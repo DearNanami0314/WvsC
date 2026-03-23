@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bhopjx6o3hegh"]
+
+[ext_resource type="FontFile" uid="uid://1jly0smcxdgu" path="res://Art/pixel_rpg.ttf" id="3_slnq3"]
+
+[resource]
+default_font = ExtResource("3_slnq3")
+default_font_size = 10
+Panel/styles/panel = null

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://3uwvhv2kbvls"]
+
+[ext_resource type="Script" uid="uid://bgimx3jg6eb37" path="res://Scenes/UI/enemy_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://14hljoufpdhb" path="res://Art/Enemies/test_enemy.png" id="2_texture"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 0.65)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp_fill"]
+bg_color = Color(0.18, 0.78, 0.33, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="EnemyUI" type="Node2D" unique_id=470125292]
+position = Vector2(140, 60)
+script = ExtResource("1_script")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1597348911]
+texture = ExtResource("2_texture")
+
+[node name="HPBar" type="ProgressBar" parent="." unique_id=140413306]
+offset_left = -10.0
+offset_top = 12.0
+offset_right = 10.0
+offset_bottom = 14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hp_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hp_fill")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="." unique_id=312309921]
+offset_left = -18.0
+offset_top = 14.0
+offset_right = 56.0
+offset_bottom = 37.0
+scale = Vector2(0.5, 0.5)
+text = "HP: 10/10"
+horizontal_alignment = 1

@@ -1,0 +1,17 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 16,
+  "editor.tabSize": 4,
+
+  "files.exclude": {
+    ".import/": true
+  },
+
+  "search.exclude": {
+    ".import/": true
+  },
+
+  "godot_tools.editor_path": "d:\\En\\steamapps\\common\\Godot Engine\\godot.windows.opt.tools.64.exe",
+  "godot_tools.lsp_port": 6005,
+  "godotTools.editorPath.godot4": "d:\\En\\steamapps\\common\\Godot Engine\\godot.windows.opt.tools.64.exe"
+}
